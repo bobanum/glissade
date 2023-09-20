@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Puzzle</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="module">
+		import App from './src/App.js';
+		App.main('img/engage-toi.webp');
+	</script>
+</head>
+
+<body>
+	<svg width="0" height="0" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<defs>
+			<filter id="canny" x="-.009375" y="-.009375" width="1.0188" height="1.0188" color-interpolation-filters="sRGB">
+				<feGaussianBlur result="result1" stdDeviation="1" />
+				<feConvolveMatrix bias="0" divisor="0.0522778" in="result1" kernelMatrix="0 1 0 1 -4 1 0 1 0" order="3 3" preserveAlpha="true" result="convolve" stdDeviation="1.5" targetX="1" targetY="1" />
+				<feColorMatrix type="saturate" values="0" />
+				<!-- <feGaussianBlur stdDeviation="1" /> -->
+				<feColorMatrix id="feColorMatrix43917" values="-1.0000000 0.0000000 0.0000000 0.0000000 1.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 1.0000000 0.0000000 0.0000000 0.0000000 1.0000000 0.0000000 " />
+			</filter>
+			<filter id="texture" x="-.01293" y="-.016434" width="1.0259" height="1.0329" color-interpolation-filters="sRGB">
+				<feTurbulence baseFrequency="0.07" numOctaves="4" result="result0" type="fractalNoise"/>
+				<feDisplacementMap in="SourceGraphic" in2="result0" result="result2" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+				<feBlend in="result2" in2="result2" mode="multiply" result="result5"/>
+				<feGaussianBlur in="result2" result="result4" stdDeviation="10"/>
+				<feComposite in="result0" in2="result4" k1="2" k3="0.5" operator="arithmetic" result="result6"/>
+				<feComposite in="result6" in2="result5" operator="in" result="result7"/>
+			</filter>
+			</defs>
+	</svg>
+
+	<div id="interface">
+		<main id="app">
+			<!-- <div id="controls">
+				<button id="shuffle">Shuffle</button>
+				<button id="solve">Solve</button>
+			</div> -->
+		</main>
+	</div>
+</body>
+
+</html>
